@@ -15,6 +15,11 @@ app.set('views', './view');
 
 //Middlewares
 app.use(express.static('public'));
+app.use((err, res, req, next) =>{
+    console.error(err.stack);
+    res.status(500).send('Internal Server Error');
+    next();
+});
 
 //Start server
 app.listen(PORT, () =>{
