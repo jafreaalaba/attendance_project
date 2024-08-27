@@ -16,12 +16,9 @@ const attendanceManagerSchema = new mongoose.Schema({
     role: {
         type: String,
         default: 'Attendance Manager',
-        enum: ['attendance-manager', 'Admin'],
-
+        enum: ['Attendance Manager', 'Admin'],
     },
-    timestamps: true,
-
-
+  //timestamps: true,
 });
 
 const AttendanceManager = mongoose.model('AttendanceManager', attendanceManagerSchema);
